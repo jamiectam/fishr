@@ -19,17 +19,19 @@ provided, this is computed automatically.}
 
 \item{area_swept}{Numeric vector of area swept (e.g., km²)}
 
-\item{catch}{Optional numeric vector of catch. If provided with \code{effort},
-CPUE is computed via \code{cpue()}.}
+\item{catch}{Numeric vector of catch (e.g., \strong{kg})}
 
-\item{effort}{Optional numeric vector of effort. Required if \code{catch} is
-provided.}
+\item{effort}{Numeric vector of effort (e.g., hours)}
 
 \item{verbose}{Logical; print processing info? Default from
 \code{getOption("fishr.verbose", FALSE)}.}
 
-\item{...}{Additional arguments passed to \code{cpue()} when computing from
-catch and effort (e.g., \code{method}, \code{gear_factor}).}
+\item{...}{
+  Arguments passed on to \code{\link[=cpue]{cpue}}
+  \describe{
+    \item{\code{gear_factor}}{Numeric scalar for gear standardization (default 1)}
+    \item{\code{method}}{Character; one of \code{"ratio"} (default) or \code{"log"}.}
+  }}
 }
 \value{
 A numeric vector of biomass index values
@@ -37,6 +39,15 @@ A numeric vector of biomass index values
 \description{
 Calculates biomass index from CPUE and area swept. Can optionally
 compute CPUE from catch and effort data.
+}
+\details{
+Two modes of use
+\itemize{
+\item Provide \code{cpue} directly
+\item Provide \code{effort} and  \code{catch} to compute CPUE first, then scale by area.
+}
+
+Any additional arguments in \code{...} are forwarded to \code{\link[=cpue]{cpue()}}.
 }
 \examples{
 # From pre-computed CPUE
