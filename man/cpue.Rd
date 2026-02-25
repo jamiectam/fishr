@@ -12,6 +12,8 @@ cpue(catch, effort, gear_factor = 1, verbose = FALSE)
 \item{effort}{Numeric vector of effort}
 
 \item{gear_factor}{Numeric adjustment for gear standardization}
+
+\item{verbose}{Logical indicating whether to print processing messages (default is FALSE)}
 }
 \value{
 A numeric vector of CPUE values
