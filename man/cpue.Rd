@@ -13,7 +13,7 @@ cpue(
 )
 }
 \arguments{
-\item{catch}{Numeric vector of catch (e.g., kg)}
+\item{catch}{Numeric vector of catch (e.g., \strong{kg})}
 
 \item{effort}{Numeric vector of effort (e.g., hours)}
 
