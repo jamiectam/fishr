@@ -6,16 +6,6 @@
       Error:
       ! 'catch' must be numeric, got character.
 
-# cpue warns when catch and effort lengths differ
-
-    Code
-      cpue(c(100, 200, 300), c(10, 20))
-    Condition
-      Warning in `catch / effort`:
-      longer object length is not a multiple of shorter object length
-    Output
-      [1] 10 10 30
-
 # cpue uses verbosity when option set to TRUE
 
     Code
@@ -23,5 +13,9 @@
     Message
       Processing 1 records using ratio method
     Output
-      [1] 10
+      CPUE Result
+      Records:      1 
+      Method:       ratio 
+      Gear factor:  1 
+      Values:       10 
 
